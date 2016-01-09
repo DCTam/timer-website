@@ -1,0 +1,59 @@
+#layout {
+	background-color: #1a1a1a;
+	height: 1080px;
+	margin-bottom: 0px;
+}
+
+.well {
+	background-color: darkseagreen;
+}
+
+#breakLength {
+	padding-right: 600px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.bigFonts {
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.pane {
+	color: white;
+}
+
+.minusBut {
+	font-weight: bold;
+	font-size: 30px;
+	width: 40px;
+}
+
+.plusBut {
+	font-weight: bold;
+	font-size: 30px;
+	width: 40px;
+	color: green;
+}
+
+
+h2{
+    font-weight: bold;
+	font-size: 80px;
+	color: white;
+    font-family: Papyrus;
+}
+
+h3 {
+    font-weight: bold;
+	font-size: 40px;
+	color: white;
+	font-family: Papyrus;
+}
+
+h4{
+   font-weight: bold;
+	font-size: 30px;
+	color: white;
+    font-family: Papyrus; 
+}

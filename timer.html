@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Daniel's timer</title>
+            <script src="jquery.js"></script>
+            <script src="timer.js"></script>
+            <link rel="stylesheet" href="css/bootstrap.css"></link>
+            <link rel="stylesheet" type="text/css" href="timer.css" media="screen"></link>
+
+    </head>
+<body>
+
+	<div id="layout" class="container-fluid">
+		
+		<div class="text-center">
+			<h2>Timer</h2>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-3 col-lg-3 col-sm-3"></div>
+			
+			<div class="col-md-3 col-lg-3 col-sm-3 bigFonts pane">
+					<table align="center">
+						<tr>
+							<td colspan="4">
+								Break Length
+							</td>
+						</tr>
+						<tr>
+							<td><a id="breakMinus" class="btn btn-secondary minusBut">-</a></td>
+							<td id="breakNum" colspan="2">15</td>
+							<td><a id="breakPlus" class="btn btn-secondary plusBut">+</a></td>
+						</tr>
+						
+					</table>
+			</div>
+			
+			<div class="col-md-3 col-lg-3 col-sm-3 bigFonts pane">
+				<table align="center">
+					<tr>
+						<td colspan="4">Session Length</td>
+					</tr>
+					<tr>
+						<td><a id="sessionMinus" class="btn btn-secondary minusBut">-</a></td>
+						<td id="sessionNum" colspan="2">55</td>
+						<td><a id="sessionPlus" class="btn btn-secondary plusBut">+</a></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="col-md-3 col-lg-3 col-sm-3"></div>
+			
+		</div>
+	
+		<div align="center">
+			<a id="startBut" class="btn btn-sm btn-success">Start</a>
+			<a id="clearBut" class="btn btn-sm btn-danger">Clear</a>
+			<h3>Session</h3>
+			<br>
+			<h4>00:00:00</h4>
+		</div>
+
+    </div>
+
+</body>
+</html>
+
+<style>
+    
+</style>
