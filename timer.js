@@ -3,8 +3,13 @@ var sessionLength = 0;
 var sessionSec = 0;
 var sessionMin = 0;
 var sessionHour = 0;
+var seconds = 59;
+var timerTotal;
+var timerSec;
+var timerMin;
+var timerHour;
 
-$(document).ready(function(){
+$(document).ready(function() {
 	
 	$('#breakMinus').on('click', function(){
 		breakLength = +$('#breakNum').html() - 1;
@@ -38,6 +43,10 @@ $(document).ready(function(){
 		startTimer(+$('#sessionNum').html());
 	});	
 	
+    $('#clearBut').on('click', function(){
+        stopTime();
+    });
+    
 });
 
 function startTimer(timeLength){
@@ -47,18 +56,60 @@ function startTimer(timeLength){
 	sessionMin = Math.floor(timeLength % 60);
 	sessionSec = Math.floor(timeLength * 60);
 	
-	//setInterval(function(print), 1000);
-	
-	$('#timerOutput').html(sessionHour + ":" + sessionMin + ":" + sessionSec);
-	alert(sessionHour + " " + sessionMin + " " + sessionSec);
-	
+	$('#hrSpan').html(sessionHour);
+    $('#minSpan').html(sessionMin);
+    alert(sessionHour + " " + sessionMin + " " + sessionSec);
+	updateTotal(sessionSec);
+    updateSec(sessionSec);
+   
 }
 
-//fuction print(){
-//	$('#timerOutput').html(sessionHour + ":" + sessionMin + ":" + sessionSec);
-//	//sessionSec -= 1;
-//}
-//
-//function decNum(num){
-//	num -= 1;
+function updateTotal(totalSec){ 
+    //$('#totalSpan').html(totalSec);   
+    totalSec--;
+    timerTotal = setTimeout('updateTotal('+totalSec+')', 1);
+    
+    if(totalSec < 0){
+        alert("break time");
+        clearTimeout(timerSec);
+        clearTimeout(timerTotal);
+        
+    }   
+}
+
+function updateSec(){
+    $('#secSpan').html(seconds);
+    seconds--;
+    timerSec = setTimeout('updateSec('+seconds+')', 1);
+    
+    if(seconds < 0){
+        updateMin();
+        seconds = 59;
+    }
+
+}
+
+function updateMin(){
+    sessionMin--;
+    
+    if(sessionMin < 0){
+        updateHour();
+        sessionMin = 59;
+    }
+    
+    $('#minSpan').html(sessionMin);
+}
+
+function updateHour(hours){
+    sessionHour--;
+    $('#hrSpan').html(sessionHour);
+    
+}
+
+
+//function stopTime(){
+//    clearTimeout(timerTotal);
+//    clearTimeout(timerSec);
+//    clearTimeout(timerMin);
+//    clearTimeout(timerHour);
 //}
