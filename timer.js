@@ -112,4 +112,4 @@ function updateHour(hours){
 //    clearTimeout(timerSec);
 //    clearTimeout(timerMin);
 //    clearTimeout(timerHour);
-//}
+//} test
